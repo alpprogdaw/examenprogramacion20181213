@@ -19,7 +19,42 @@ public class Ejercicio3 {
 	 * 
 	 */
 
-	public static ...
+	public static char[][] stringToArray2D (char[] cadena) {
+		int col = cadena.length/2;
+		int i, j, z;
+		char [][] resultado = new char [2][col];
+		j=0;
+		z=0;
+		for (i=0;i<cadena.length;i++) {
+			if (i % 2 == 0) {
+				resultado[0][j] = cadena[i]; 
+				j++;
+			}
+			else {
+				resultado[1][z] = cadena[i];
+				z++;
+			}
+		}
+		return resultado;
+	}
+	public static char[][] stringToArray2D2v (String cadena) {
+		int col = cadena.length()/2;
+		int i, j, z;
+		char [][] resultado = new char [2][col];
+		j=0;
+		z=0;
+		for (i=0;i<cadena.length();i++) {
+			if (i % 2 == 0) {
+				resultado[0][j] = cadena.charAt(i); 
+				j++;
+			}
+			else {
+				resultado[1][z] = cadena.charAt(i);
+				z++;
+			}
+		}
+		return resultado;
+	}
 	
 	/*
 	 * 1 punto
@@ -32,7 +67,21 @@ public class Ejercicio3 {
 	 */
 	
 	public static void main(String[] args) {
-		
+		char [] cadena = {'l', 'a', 'c', 'a','s', 'a'}; 
+		String cadena2 = "lacasa";
+//		char [][] resultado = stringToArray2D(cadena);
+		char [][] resultado = stringToArray2D2v(cadena2);
+		for (int i=0;i<2;i++) {
+			System.out.print("[");
+			for (int j=0;j<resultado[i].length;j++) {
+				if (j<resultado[i].length -1) {
+					System.out.print(resultado[i][j] + ", ");
+				}
+				else {
+					System.out.print(resultado[i][j]);
+				}
+			}
+			System.out.println("]");
+		}
 	}
-
 }

@@ -34,6 +34,11 @@ public class Ejercicio5 {
 
 			while (numero != x) {
 				intentos++;
+				do {
+					System.out.println("Introduzca un numero entre el 100 y el 200: ");
+					numero=in.nextInt();
+				} while (numero <= 100 || numero >= 200);
+
 			}
 			if (numero == x) {
 				System.out.println("Has acertado, el numero a adivinar era " + x + " lo has acertado en " + intentos + " intentos" );

@@ -15,8 +15,14 @@ public class Ejercicio1 {
 	 */
 	
 	public static void mostrarVector(int [] vector) {
+		System.out.print("[");
 		for (int i=0; i<vector.length; i++) {
-			System.out.print("[ " + vector[i] + " ,");
+			if (i == vector.length-1) {
+				System.out.print(vector[i]);
+			}
+			else {
+				System.out.print(vector[i] + " ,");
+			}
 		}
 		System.out.println("]");
 	}
@@ -32,9 +38,10 @@ public class Ejercicio1 {
 	 * donde 'c1', 'c2', 'c3', ...., 'cN' son los caracteres almacenados en el vector.
 	 */
 
-	public static void mostrarCaracter(char [] vector) {
+	public static void mostrarVector(char [] vector) {
+		System.out.println("[");
 		for (int i=0; i<vector.length; i++) {
-			System.out.print("[ " + vector[i] + " ,");
+			System.out.print(vector[i] + " ,");
 		}
 		System.out.println("]");
 	}

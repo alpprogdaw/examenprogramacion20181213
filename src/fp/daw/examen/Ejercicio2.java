@@ -1,5 +1,7 @@
 package fp.daw.examen;
 
+import java.util.Random;
+
 public class Ejercicio2 {
 
 	/*
@@ -14,9 +16,26 @@ public class Ejercicio2 {
 	 * 
 	 */
 
-	public static void busquedaBinaria(int [] vector, int n) {
-		for (int i=0;i<vector.length;i++) {
-			
+	public static int busquedaBinaria(long [] vector, int n) {
+		/*
+		 * Busqueda secuencial en vectar sin que se repita ningun valor
+		 */
+		boolean encontrado = false;
+		int i=0;
+		// mientras n lo encuetre y no llegue al final sigue buscando
+		while (!encontrado && i<vector.length) {
+			if(vector[i] == n) {
+				encontrado = true;
+			}
+			else {
+				i++;
+			}
+		}
+		if (encontrado) {
+			return i; //posicion donde esta el valor q se busca
+		}
+		else {
+			return -1;
 		}
 	}
 	
@@ -37,7 +56,21 @@ public class Ejercicio2 {
 	 */
 	
 	public static void main(String[] args) {
-		
+		Random r = new Random();
+		int tam;
+		tam = r.nextInt(200 - 100 + 1) + 100;
+		long [] vector = new long [tam];
+		for (int i=0;i<vector.length;i++) {
+			vector[i] = r.nextInt(Integer.MAX_VALUE - 1) + 1;
+		}
+		int n = 20;
+		int resultado = busquedaBinaria(vector,n);
+		if (resultado == -1) {
+			System.out.println("El resultado no esta");
+		}
+		else {
+			System.out.println("El numero que busca esta en la posicion: " + resultado);
+		}
 		
 	}
 

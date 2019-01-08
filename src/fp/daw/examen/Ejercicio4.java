@@ -21,9 +21,14 @@ public class Ejercicio4 {
 
 	public static int numSecuencias(int [] vector) {
 		int n = 0;
-		for (int i=0;i<vector.length;i++) {
-			if (vector[i] == vector [i + 1]) {
+		boolean lock=false;
+		for (int i=0;i<vector.length-1;i++) {
+			if (vector[i] == vector [i + 1] && !lock ) {
 				n++;
+				lock=true;
+			}
+			else {
+				lock=false;
 			}
 		}
 		return n;
@@ -42,13 +47,15 @@ public class Ejercicio4 {
 	
 	public static void main(String[] args) {
 		Random r = new Random();
-		int [] vector = new int[r.nextInt(100 - 10 + 1) +10];
+		int [] vector = new int[r.nextInt(20- 10 + 1) +10];
 		
 		for(int i=0;i<vector.length;i++) {
 			vector [i] = r.nextInt(100 - (-100) + 1) + (-100);
 		}
-		Ejercicio1.mostrarVector(vector);
-		System.out.println(numSecuencias(vector));
+		int [] vector2 = {9,2,2,3,2,5,7,7,7,4};
+		Ejercicio1 e1 = new Ejercicio1();
+		e1.mostrarVector(vector2);
+		System.out.println(numSecuencias(vector2));
 	}
 
 }
